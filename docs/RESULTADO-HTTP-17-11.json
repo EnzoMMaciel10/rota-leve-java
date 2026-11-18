@@ -1,0 +1,553 @@
+{
+  "execucao": "20261117T182211-0c12b6",
+  "inicio": "2026-11-17T15:22:11.440394-03:00",
+  "fim": "2026-11-17T15:22:14.492623-03:00",
+  "alvo": "http://127.0.0.1:8080",
+  "total_casos": 31,
+  "aprovados": 31,
+  "falhas": 0,
+  "resultado": "APROVADO",
+  "escopo": "HTTP real contra API em execução com RabbitMQ habilitado; dados próprios sintéticos",
+  "ia_generativa": {
+    "habilitada": false,
+    "testada": false,
+    "fonte_observada": "REGRAS_LOCAIS_SEM_LLM"
+  },
+  "mensageria": {
+    "ponto_demo_modificado": false,
+    "notificacao_de_rota_via_broker_comprovada_nesta_bateria": false,
+    "observacao": "Relatos e alterações somente em ponto sintético sem vínculo com rotas demo; validação do alerta RabbitMQ é registrada separadamente."
+  },
+  "recursos_criados": {
+    "usuarios": [
+      {
+        "id": 5,
+        "nome": "Teste automático 20261117T182211-0c12b6 a"
+      },
+      {
+        "id": 6,
+        "nome": "Teste automático 20261117T182211-0c12b6 b"
+      }
+    ],
+    "pontos": [
+      {
+        "id": 5,
+        "nome": "Teste automático 20261117T182211-0c12b6 elevador"
+      }
+    ],
+    "relatos": [
+      {
+        "id": 3,
+        "pontoId": 5
+      }
+    ],
+    "rotas_salvas": [
+      {
+        "id": 3,
+        "nome": "Teste automático 20261117T182211-0c12b6"
+      }
+    ]
+  },
+  "limpeza": [
+    {
+      "recurso": "relato sintético e confirmações associadas",
+      "caminho": "/api/v1/relatos/3",
+      "resultado": "LIMPO",
+      "status": 204
+    },
+    {
+      "recurso": "ponto sintético",
+      "caminho": "/api/v1/pontos/5",
+      "resultado": "LIMPO",
+      "status": 204
+    },
+    {
+      "recurso": "rota salva sintética",
+      "caminho": "/api/v1/rotas/salvas/3",
+      "resultado": "LIMPO",
+      "status": 204
+    },
+    {
+      "recurso": "cidadão sintético a e perfil",
+      "caminho": "/api/v1/usuarios/me",
+      "resultado": "LIMPO",
+      "status": 204
+    },
+    {
+      "recurso": "cidadão sintético b e perfil",
+      "caminho": "/api/v1/usuarios/me",
+      "resultado": "LIMPO",
+      "status": 204
+    }
+  ],
+  "observacao_limpeza": "Buscas temporárias geradas pelo servidor expiram pelo processo normal de limpeza; nenhum objeto preexistente foi alterado.",
+  "casos": [
+    {
+      "caso": "API disponível e saudável",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "GET",
+          "caminho": "/actuator/health",
+          "status": 200,
+          "duracao_ms": 15
+        }
+      ]
+    },
+    {
+      "caso": "Cadastro público cria cidadão mesmo com papel GESTOR solicitado",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/auth/cadastro",
+          "status": 201,
+          "duracao_ms": 204
+        }
+      ]
+    },
+    {
+      "caso": "Segundo cidadão sintético cadastrado",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/auth/cadastro",
+          "status": 201,
+          "duracao_ms": 187
+        }
+      ]
+    },
+    {
+      "caso": "Cadastro duplicado ignora diferença entre maiúsculas e minúsculas",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/auth/cadastro",
+          "status": 409,
+          "duracao_ms": 16
+        }
+      ]
+    },
+    {
+      "caso": "Login real emite JWT para os dois cidadãos",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/auth/login",
+          "status": 200,
+          "duracao_ms": 187
+        },
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/auth/login",
+          "status": 200,
+          "duracao_ms": 156
+        }
+      ]
+    },
+    {
+      "caso": "Senha incorreta é recusada com 401",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/auth/login",
+          "status": 401,
+          "duracao_ms": 172
+        }
+      ]
+    },
+    {
+      "caso": "Requisição sem JWT é recusada com 401",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "GET",
+          "caminho": "/api/v1/usuarios/me",
+          "status": 401,
+          "duracao_ms": 0
+        }
+      ]
+    },
+    {
+      "caso": "JWT adulterado é recusado com 401",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "GET",
+          "caminho": "/api/v1/usuarios/me",
+          "status": 401,
+          "duracao_ms": 32
+        }
+      ]
+    },
+    {
+      "caso": "Consulta do próprio usuário preserva o hash de senha",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "GET",
+          "caminho": "/api/v1/usuarios/me",
+          "status": 200,
+          "duracao_ms": 46
+        }
+      ]
+    },
+    {
+      "caso": "Busca sem perfil retorna 422",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/rotas/busca",
+          "status": 422,
+          "duracao_ms": 32
+        }
+      ]
+    },
+    {
+      "caso": "Perfil vazio retorna 400 e erros padronizados",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "PUT",
+          "caminho": "/api/v1/perfis/me",
+          "status": 400,
+          "duracao_ms": 47
+        }
+      ]
+    },
+    {
+      "caso": "Perfil de cadeirante força evitar escadas",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "PUT",
+          "caminho": "/api/v1/perfis/me",
+          "status": 200,
+          "duracao_ms": 31
+        }
+      ]
+    },
+    {
+      "caso": "Perfil gestante válido e busca demo reordenada por compatibilidade",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "PUT",
+          "caminho": "/api/v1/perfis/me",
+          "status": 200,
+          "duracao_ms": 47
+        },
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/rotas/busca",
+          "status": 200,
+          "duracao_ms": 78
+        }
+      ]
+    },
+    {
+      "caso": "Limite de 50 m informa ausência de opção compatível",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "PUT",
+          "caminho": "/api/v1/perfis/me",
+          "status": 200,
+          "duracao_ms": 47
+        },
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/rotas/busca",
+          "status": 200,
+          "duracao_ms": 47
+        },
+        {
+          "metodo": "PUT",
+          "caminho": "/api/v1/perfis/me",
+          "status": 200,
+          "duracao_ms": 31
+        }
+      ]
+    },
+    {
+      "caso": "Rota é salva por referência da busca gerada no servidor",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/rotas/salvas",
+          "status": 201,
+          "duracao_ms": 47
+        }
+      ]
+    },
+    {
+      "caso": "Consulta, edição e paginação das próprias rotas salvas",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "GET",
+          "caminho": "/api/v1/rotas/salvas/3",
+          "status": 200,
+          "duracao_ms": 47
+        },
+        {
+          "metodo": "PUT",
+          "caminho": "/api/v1/rotas/salvas/3",
+          "status": 200,
+          "duracao_ms": 62
+        },
+        {
+          "metodo": "GET",
+          "caminho": "/api/v1/rotas/salvas?page=0&size=1",
+          "status": 200,
+          "duracao_ms": 63
+        }
+      ]
+    },
+    {
+      "caso": "Outro usuário recebe 404 ao consultar, editar ou excluir rota alheia",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "GET",
+          "caminho": "/api/v1/rotas/salvas/3",
+          "status": 404,
+          "duracao_ms": 31
+        },
+        {
+          "metodo": "PUT",
+          "caminho": "/api/v1/rotas/salvas/3",
+          "status": 404,
+          "duracao_ms": 31
+        },
+        {
+          "metodo": "DELETE",
+          "caminho": "/api/v1/rotas/salvas/3",
+          "status": 404,
+          "duracao_ms": 16
+        }
+      ]
+    },
+    {
+      "caso": "Outra pessoa não pode salvar alternativas da busca privada",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/rotas/salvas",
+          "status": 404,
+          "duracao_ms": 47
+        }
+      ]
+    },
+    {
+      "caso": "Busca e alternativa inexistentes retornam 404",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/rotas/salvas",
+          "status": 404,
+          "duracao_ms": 31
+        },
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/rotas/salvas",
+          "status": 404,
+          "duracao_ms": 15
+        }
+      ]
+    },
+    {
+      "caso": "Cidadão não pode cadastrar ponto crítico",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/pontos",
+          "status": 403,
+          "duracao_ms": 32
+        }
+      ]
+    },
+    {
+      "caso": "Gestor autentica e cadastra ponto crítico sintético",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/auth/login",
+          "status": 200,
+          "duracao_ms": 187
+        },
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/pontos",
+          "status": 201,
+          "duracao_ms": 47
+        }
+      ]
+    },
+    {
+      "caso": "Gestor atualiza o próprio ponto de teste",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "PUT",
+          "caminho": "/api/v1/pontos/5",
+          "status": 200,
+          "duracao_ms": 47
+        }
+      ]
+    },
+    {
+      "caso": "Relato sem foto é recusado com 400",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/relatos",
+          "status": 400,
+          "duracao_ms": 31
+        }
+      ]
+    },
+    {
+      "caso": "Relato válido altera somente o ponto sintético para PROBLEMA",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/relatos",
+          "status": 201,
+          "duracao_ms": 31
+        },
+        {
+          "metodo": "GET",
+          "caminho": "/api/v1/pontos/5",
+          "status": 200,
+          "duracao_ms": 47
+        }
+      ]
+    },
+    {
+      "caso": "Autor não confirma o próprio relato",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/relatos/3/confirmacoes",
+          "status": 409,
+          "duracao_ms": 16
+        }
+      ]
+    },
+    {
+      "caso": "Confirmação repetida é idempotente e mantém a mesma expiração",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/relatos/3/confirmacoes",
+          "status": 200,
+          "duracao_ms": 47
+        },
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/relatos/3/confirmacoes",
+          "status": 200,
+          "duracao_ms": 47
+        }
+      ]
+    },
+    {
+      "caso": "Outro cidadão não pode editar relato alheio",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "PUT",
+          "caminho": "/api/v1/relatos/3",
+          "status": 403,
+          "duracao_ms": 47
+        }
+      ]
+    },
+    {
+      "caso": "Cidadão não pode resolver relato como gestor",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/relatos/3/resolver",
+          "status": 403,
+          "duracao_ms": 46
+        }
+      ]
+    },
+    {
+      "caso": "Pontos e relatos oferecem paginação funcional",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "GET",
+          "caminho": "/api/v1/pontos?page=0&size=1",
+          "status": 200,
+          "duracao_ms": 47
+        },
+        {
+          "metodo": "GET",
+          "caminho": "/api/v1/relatos?page=0&size=1&status=ATIVO",
+          "status": 200,
+          "duracao_ms": 282
+        }
+      ]
+    },
+    {
+      "caso": "Explicação informa REGRAS_LOCAIS_SEM_LLM; IA permanece adiada",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "POST",
+          "caminho": "/api/v1/rotas/salvas/3/explicacao",
+          "status": 200,
+          "duracao_ms": 46
+        }
+      ]
+    },
+    {
+      "caso": "Ponto vinculado ao relato não pode ser excluído",
+      "resultado": "APROVADO",
+      "requisicoes": [
+        {
+          "metodo": "DELETE",
+          "caminho": "/api/v1/pontos/5",
+          "status": 409,
+          "duracao_ms": 47
+        }
+      ]
+    }
+  ],
+  "paginacao_contrato_documentado": {
+    "verificado_em": "2026-11-17T15:22:49.330871-03:00",
+    "requisicoes": [
+      {
+        "caminho": "/api/v1/pontos?page=0&size=1",
+        "status": 200,
+        "contrato": "PageImpl com metadados no nível principal",
+        "resultado": "APROVADO"
+      },
+      {
+        "caminho": "/api/v1/relatos?page=0&size=1&status=ATIVO",
+        "status": 200,
+        "contrato": "PageImpl com metadados no nível principal",
+        "resultado": "APROVADO"
+      }
+    ]
+  }
+}

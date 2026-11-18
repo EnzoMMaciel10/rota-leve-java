@@ -1,0 +1,369 @@
+{
+  "registradoEm": "2026-11-17T16:49:41-03:00",
+  "resultado": "APROVADO",
+  "testesMaven": {
+    "tests": 60,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "testesAprovados": 59,
+  "ambiente": {
+    "registradoEm": "2026-11-17T16:36:38-03:00",
+    "springAI": "1.1.2",
+    "springBoot": "3.5.14",
+    "provedor": "Ollama nativo",
+    "dockerEngine": "29.4.0",
+    "ollama": "ollama version is 0.40.16",
+    "imagemDigest": [
+      "ollama/ollama@sha256:910d0d8107b538fb0894e63163eb195de0cc7aefcbc666dc62d3b18f71124592"
+    ],
+    "modelo": {
+      "name": "qwen2.5:1.5b",
+      "model": "qwen2.5:1.5b",
+      "modified_at": "2026-11-17T18:49:08.749160431Z",
+      "size": 986061892,
+      "digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "1.5B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 1536,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    },
+    "limiteMemoriaBytes": 4294967296,
+    "limiteNanoCPUs": 4000000000,
+    "portasPublicadas": {
+      "11434/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "11434"
+        }
+      ]
+    },
+    "chaveExternaNecessaria": false,
+    "execucao": "CPU local"
+  },
+  "avaliacaoControlada": {
+    "executado_em_utc": "2026-11-17T19:38:43.495652300Z",
+    "tipo": "SPRING_AI_OLLAMA_REAL_FIXTURES_SINTETICAS",
+    "modelo": "qwen2.5:1.5b",
+    "configuracao": {
+      "temperature": 0.0,
+      "seed": 42,
+      "num_predict": 160
+    },
+    "cenarios": [
+      {
+        "cenario": "COMPATIVEL",
+        "latencia_segundos": 36.884,
+        "fonte": "SPRING_AI",
+        "texto_llm": "A rota prevê 300 metros a pé, 30 minutos de viagem no total e nota de adequação de 90 pontos.",
+        "texto_final": "Cenário sintético de demonstração; não representa condições reais. Compatível apenas com os dados disponíveis. A avaliação não garante acessibilidade.\n\nA rota prevê 300 metros a pé, 30 minutos de viagem no total e nota de adequação de 90 pontos.\n\nDados verificados: Caminhada: 300 m. Duração estimada total da viagem: 30 min. Score: 90/100. Avaliação: COMPATIVEL_COM_DADOS_CONHECIDOS. Compatível com as condições conhecidas na fixture sintética.",
+        "aviso": "Consulte as condições no local. A avaliação depende dos dados disponíveis e não garante acessibilidade.",
+        "dados_verificados": {
+          "rota": {
+            "id": "fixture-COMPATIVEL",
+            "origem": "Origem sintética",
+            "destino": "Destino sintético",
+            "resumo": "Fixture de avaliação sem ponto real associado",
+            "fonte": "DEMO_SINTETICA",
+            "duracaoSegundos": 1800,
+            "caminhadaMetros": 300,
+            "temEscadas": false,
+            "embarqueAcessivel": true,
+            "temAssento": null,
+            "temCobertura": null,
+            "pontosCriticos": [],
+            "polyline": null
+          },
+          "score": 90,
+          "compatibilidade": "COMPATIVEL_COM_DADOS_CONHECIDOS",
+          "motivos": [
+            "Compatível com as condições conhecidas na fixture sintética"
+          ],
+          "avaliadaEm": 1794916800.0
+        },
+        "qualidade_textual": "PENDENTE_REVISAO_HUMANA",
+        "criterios_revisao": [
+          "Português claro e coerente com as métricas",
+          "Sem inventar condições de equipamentos ou garantir acessibilidade",
+          "BLOQUEADA: não recomendar a opção incompatível",
+          "INSUFICIENTE: não tratar falta de dados como acessibilidade comprovada",
+          "Identificar cenário sintético quando informado ao modelo"
+        ]
+      },
+      {
+        "cenario": "BLOQUEADA",
+        "latencia_segundos": 4.738,
+        "fonte": "SPRING_AI",
+        "texto_llm": "A rota prevê 1100 metros a pé, 30 minutos de viagem no total e nota de adequação de 0 pontos.",
+        "texto_final": "Cenário sintético de demonstração; não representa condições reais. Esta opção não atende ao perfil; é preciso buscar outra alternativa. A avaliação não garante acessibilidade.\n\nA rota prevê 1100 metros a pé, 30 minutos de viagem no total e nota de adequação de 0 pontos.\n\nDados verificados: Caminhada: 1100 m. Duração estimada total da viagem: 30 min. Score: 0/100. Avaliação: INCOMPATIVEL. Escadas incompatíveis com o perfil. Caminhada excede limite do perfil.",
+        "aviso": "Consulte as condições no local. A avaliação depende dos dados disponíveis e não garante acessibilidade.",
+        "dados_verificados": {
+          "rota": {
+            "id": "fixture-BLOQUEADA",
+            "origem": "Origem sintética",
+            "destino": "Destino sintético",
+            "resumo": "Fixture de avaliação sem ponto real associado",
+            "fonte": "DEMO_SINTETICA",
+            "duracaoSegundos": 1800,
+            "caminhadaMetros": 1100,
+            "temEscadas": true,
+            "embarqueAcessivel": false,
+            "temAssento": null,
+            "temCobertura": null,
+            "pontosCriticos": [],
+            "polyline": null
+          },
+          "score": 0,
+          "compatibilidade": "INCOMPATIVEL",
+          "motivos": [
+            "Escadas incompatíveis com o perfil",
+            "Caminhada excede limite do perfil"
+          ],
+          "avaliadaEm": 1794916800.0
+        },
+        "qualidade_textual": "PENDENTE_REVISAO_HUMANA",
+        "criterios_revisao": [
+          "Português claro e coerente com as métricas",
+          "Sem inventar condições de equipamentos ou garantir acessibilidade",
+          "BLOQUEADA: não recomendar a opção incompatível",
+          "INSUFICIENTE: não tratar falta de dados como acessibilidade comprovada",
+          "Identificar cenário sintético quando informado ao modelo"
+        ]
+      },
+      {
+        "cenario": "INSUFICIENTE",
+        "latencia_segundos": 4.901,
+        "fonte": "SPRING_AI",
+        "texto_llm": "A rota prevê 350 metros a pé, 30 minutos de viagem no total e nota de adequação de 55 pontos.",
+        "texto_final": "Cenário sintético de demonstração; não representa condições reais. Faltam informações; não é possível confirmar a acessibilidade. A avaliação não garante acessibilidade.\n\nA rota prevê 350 metros a pé, 30 minutos de viagem no total e nota de adequação de 55 pontos.\n\nDados verificados: Caminhada: 350 m. Duração estimada total da viagem: 30 min. Score: 55/100. Avaliação: DADOS_INSUFICIENTES. Escadas e embarque não verificados. Dados insuficientes para recomendar acessibilidade.",
+        "aviso": "Consulte as condições no local. A avaliação depende dos dados disponíveis e não garante acessibilidade.",
+        "dados_verificados": {
+          "rota": {
+            "id": "fixture-INSUFICIENTE",
+            "origem": "Origem sintética",
+            "destino": "Destino sintético",
+            "resumo": "Fixture de avaliação sem ponto real associado",
+            "fonte": "DEMO_SINTETICA",
+            "duracaoSegundos": 1800,
+            "caminhadaMetros": 350,
+            "temEscadas": null,
+            "embarqueAcessivel": null,
+            "temAssento": null,
+            "temCobertura": null,
+            "pontosCriticos": [],
+            "polyline": null
+          },
+          "score": 55,
+          "compatibilidade": "DADOS_INSUFICIENTES",
+          "motivos": [
+            "Escadas e embarque não verificados",
+            "Dados insuficientes para recomendar acessibilidade"
+          ],
+          "avaliadaEm": 1794916800.0
+        },
+        "qualidade_textual": "PENDENTE_REVISAO_HUMANA",
+        "criterios_revisao": [
+          "Português claro e coerente com as métricas",
+          "Sem inventar condições de equipamentos ou garantir acessibilidade",
+          "BLOQUEADA: não recomendar a opção incompatível",
+          "INSUFICIENTE: não tratar falta de dados como acessibilidade comprovada",
+          "Identificar cenário sintético quando informado ao modelo"
+        ]
+      }
+    ],
+    "avaliacao_qualitativa": "Asserções validam integração e dados; os textos brutos exigem revisão humana."
+  },
+  "fluxoHTTP": {
+    "executado_em_utc": "2026-11-17T19:41:01.444130+00:00",
+    "tipo": "fluxo_http_real_com_modelo_configurado_no_backend",
+    "base_url": "http://localhost:8080",
+    "roteamento": "DEMO_SINTETICA",
+    "observacao": "A verificação automática comprova a integração e preservação dos dados; qualidade do texto requer revisão humana.",
+    "cenarios": [
+      {
+        "cenario": "COMPATIVEL",
+        "latencia_segundos": 4.279,
+        "verificacoes_automaticas": {
+          "fonte_spring_ai": true,
+          "texto_gerado_separado_presente": true,
+          "bloco_de_dados_preservado": true,
+          "compatibilidade_preservada": true,
+          "score_preservado": true,
+          "caminhada_preservada": true,
+          "aviso_estruturado_presente": true
+        },
+        "aprovado_automaticamente": true,
+        "texto_llm": "A rota prevê 300 metros a pé, 28 minutos de viagem no total e nota de adequação de 93 pontos.",
+        "texto_final": "Cenário sintético de demonstração; não representa condições reais. Compatível apenas com os dados disponíveis. A avaliação não garante acessibilidade.\n\nA rota prevê 300 metros a pé, 28 minutos de viagem no total e nota de adequação de 93 pontos.\n\nDados verificados: Caminhada: 300 m. Duração estimada total da viagem: 28 min. Score: 93/100. Avaliação: COMPATIVEL_COM_DADOS_CONHECIDOS. Dados sintéticos de demonstração; não representam condições reais.",
+        "aviso": "Consulte as condições no local. A avaliação depende dos dados disponíveis e não garante acessibilidade.",
+        "dados_verificados": {
+          "rota": {
+            "id": "demo-se",
+            "origem": "Praça da Sé",
+            "destino": "Hospital das Clínicas",
+            "resumo": "Metrô pela Sé (cenário simulado)",
+            "fonte": "DEMO_SINTETICA",
+            "duracaoSegundos": 1680,
+            "caminhadaMetros": 300,
+            "temEscadas": false,
+            "embarqueAcessivel": true,
+            "temAssento": true,
+            "temCobertura": true,
+            "pontosCriticos": [
+              1,
+              3
+            ],
+            "polyline": null
+          },
+          "score": 93,
+          "compatibilidade": "COMPATIVEL_COM_DADOS_CONHECIDOS",
+          "motivos": [
+            "Dados sintéticos de demonstração; não representam condições reais"
+          ],
+          "avaliadaEm": "2026-11-17T19:41:02.187105400Z"
+        },
+        "avaliacao_qualitativa": {
+          "status": "pendente_revisao_humana",
+          "criterios": [
+            "Texto em português claro e coerente com as métricas.",
+            "Não inventa condições de elevadores, assentos ou calçadas.",
+            "Não garante acessibilidade nem recomenda opção incompatível.",
+            "Identifica o cenário sintético quando informado ao modelo."
+          ]
+        }
+      },
+      {
+        "cenario": "BLOQUEADA",
+        "latencia_segundos": 10.146,
+        "verificacoes_automaticas": {
+          "fonte_spring_ai": true,
+          "texto_gerado_separado_presente": true,
+          "bloco_de_dados_preservado": true,
+          "compatibilidade_preservada": true,
+          "score_preservado": true,
+          "caminhada_preservada": true,
+          "aviso_estruturado_presente": true
+        },
+        "aprovado_automaticamente": true,
+        "texto_llm": "A rota prevê 1100 metros a pé, 25 minutos de viagem no total e nota de adequação de 0 pontos.",
+        "texto_final": "Cenário sintético de demonstração; não representa condições reais. Esta opção não atende ao perfil; é preciso buscar outra alternativa. A avaliação não garante acessibilidade.\n\nA rota prevê 1100 metros a pé, 25 minutos de viagem no total e nota de adequação de 0 pontos.\n\nDados verificados: Caminhada: 1100 m. Duração estimada total da viagem: 25 min. Score: 0/100. Avaliação: INCOMPATIVEL. Caminhada excede o limite do perfil. Há escadas incompatíveis com o perfil. Sem assento informado. Cobertura ausente ou não verificada. Elevadores da rota não verificados. Dados sintéticos de demonstração; não representam condições reais.",
+        "aviso": "Consulte as condições no local. A avaliação depende dos dados disponíveis e não garante acessibilidade.",
+        "dados_verificados": {
+          "rota": {
+            "id": "demo-escadas",
+            "origem": "Praça da Sé",
+            "destino": "Hospital das Clínicas",
+            "resumo": "Opção com escadas e caminhada longa (simulada)",
+            "fonte": "DEMO_SINTETICA",
+            "duracaoSegundos": 1500,
+            "caminhadaMetros": 1100,
+            "temEscadas": true,
+            "embarqueAcessivel": false,
+            "temAssento": false,
+            "temCobertura": false,
+            "pontosCriticos": [],
+            "polyline": null
+          },
+          "score": 0,
+          "compatibilidade": "INCOMPATIVEL",
+          "motivos": [
+            "Caminhada excede o limite do perfil",
+            "Há escadas incompatíveis com o perfil",
+            "Sem assento informado",
+            "Cobertura ausente ou não verificada",
+            "Elevadores da rota não verificados",
+            "Dados sintéticos de demonstração; não representam condições reais"
+          ],
+          "avaliadaEm": "2026-11-17T19:41:06.494459800Z"
+        },
+        "avaliacao_qualitativa": {
+          "status": "pendente_revisao_humana",
+          "criterios": [
+            "Texto em português claro e coerente com as métricas.",
+            "Não inventa condições de elevadores, assentos ou calçadas.",
+            "Não garante acessibilidade nem recomenda opção incompatível.",
+            "Identifica o cenário sintético quando informado ao modelo."
+          ]
+        }
+      }
+    ],
+    "status": "aprovado_integracao",
+    "limpeza": [
+      {
+        "recurso": "rota_sintetica",
+        "removido": true
+      },
+      {
+        "recurso": "rota_sintetica",
+        "removido": true
+      },
+      {
+        "recurso": "perfil_sintetico",
+        "removido": true
+      },
+      {
+        "recurso": "usuario_sintetico",
+        "removido": true
+      }
+    ]
+  },
+  "respostaSwagger": {
+    "rotaId": 3,
+    "texto": "Cenário sintético de demonstração; não representa condições reais. Compatível apenas com os dados disponíveis. A avaliação não garante acessibilidade.\n\nA rota prevê 300 metros a pé, 28 minutos de viagem no total e nota de adequação de 93 pontos.\n\nDados verificados: Caminhada: 300 m. Duração estimada total da viagem: 28 min. Score: 93/100. Avaliação: COMPATIVEL_COM_DADOS_CONHECIDOS. Dados sintéticos de demonstração; não representam condições reais.",
+    "fonte": "SPRING_AI",
+    "dadosVerificados": {
+      "rota": {
+        "id": "demo-se",
+        "origem": "Praça da Sé",
+        "destino": "Hospital das Clínicas",
+        "resumo": "Metrô pela Sé (cenário simulado)",
+        "fonte": "DEMO_SINTETICA",
+        "duracaoSegundos": 1680,
+        "caminhadaMetros": 300,
+        "temEscadas": false,
+        "embarqueAcessivel": true,
+        "temAssento": true,
+        "temCobertura": true,
+        "pontosCriticos": [
+          1,
+          3
+        ],
+        "polyline": null
+      },
+      "score": 93,
+      "compatibilidade": "COMPATIVEL_COM_DADOS_CONHECIDOS",
+      "motivos": [
+        "Dados sintéticos de demonstração; não representam condições reais"
+      ],
+      "avaliadaEm": "2026-11-17T19:46:34.851499300Z"
+    },
+    "aviso": "Consulte as condições no local. A avaliação depende dos dados disponíveis e não garante acessibilidade.",
+    "textoGerado": "A rota prevê 300 metros a pé, 28 minutos de viagem no total e nota de adequação de 93 pontos."
+  },
+  "revisaoAssistente": {
+    "responsavel": "assistente",
+    "status": "APROVADO_NOS_CASOS_OBSERVADOS",
+    "criterios": [
+      "números e unidades conferidos contra a avaliação estruturada",
+      "tempo descrito como total da viagem, não tempo de caminhada",
+      "nenhuma condição de equipamento, conforto ou segurança inventada nos textos aceitos",
+      "estado crítico e indicação de dados sintéticos mantidos pelo Java"
+    ],
+    "limite": "Revisão dos casos registrados; não representa garantia geral de fidelidade de um LLM."
+  },
+  "observacao": "Nenhuma chave externa foi usada; geração nativa Spring AI/Ollama local."
+}

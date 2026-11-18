@@ -1,0 +1,30 @@
+# Oracle existente; não provisiona banco nem executa deploy.
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: ${DB_DDL_AUTO:update}
+  ai:
+    model:
+      chat: ${AI_CHAT_MODEL:openai}
+  rabbitmq:
+    listener:
+      simple:
+        auto-startup: ${rotaleve.rabbit.enabled:true}
+management:
+  health:
+    rabbit:
+      enabled: ${rotaleve.rabbit.enabled:true}
+rotaleve:
+  jwt:
+    secret: ${JWT_SECRET}
+  routes:
+    provider: ${ROUTES_PROVIDER:google}
+  rabbit:
+    enabled: ${RABBIT_ENABLED:true}
+  ai:
+    enabled: ${AI_ENABLED:true}

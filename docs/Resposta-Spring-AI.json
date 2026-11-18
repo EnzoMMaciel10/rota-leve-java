@@ -1,0 +1,33 @@
+{
+  "rotaId": 3,
+  "texto": "Cenário sintético de demonstração; não representa condições reais. Compatível apenas com os dados disponíveis. A avaliação não garante acessibilidade.\n\nA rota prevê 300 metros a pé, 28 minutos de viagem no total e nota de adequação de 93 pontos.\n\nDados verificados: Caminhada: 300 m. Duração estimada total da viagem: 28 min. Score: 93/100. Avaliação: COMPATIVEL_COM_DADOS_CONHECIDOS. Dados sintéticos de demonstração; não representam condições reais.",
+  "fonte": "SPRING_AI",
+  "dadosVerificados": {
+    "rota": {
+      "id": "demo-se",
+      "origem": "Praça da Sé",
+      "destino": "Hospital das Clínicas",
+      "resumo": "Metrô pela Sé (cenário simulado)",
+      "fonte": "DEMO_SINTETICA",
+      "duracaoSegundos": 1680,
+      "caminhadaMetros": 300,
+      "temEscadas": false,
+      "embarqueAcessivel": true,
+      "temAssento": true,
+      "temCobertura": true,
+      "pontosCriticos": [
+        1,
+        3
+      ],
+      "polyline": null
+    },
+    "score": 93,
+    "compatibilidade": "COMPATIVEL_COM_DADOS_CONHECIDOS",
+    "motivos": [
+      "Dados sintéticos de demonstração; não representam condições reais"
+    ],
+    "avaliadaEm": "2026-11-17T19:46:34.851499300Z"
+  },
+  "aviso": "Consulte as condições no local. A avaliação depende dos dados disponíveis e não garante acessibilidade.",
+  "textoGerado": "A rota prevê 300 metros a pé, 28 minutos de viagem no total e nota de adequação de 93 pontos."
+}

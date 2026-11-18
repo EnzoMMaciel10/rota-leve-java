@@ -1,0 +1,98 @@
+# Exemplos para a extensão REST Client do VS Code (opcional).
+# Execute um bloco por vez, na ordem. O Swagger também executa estas operações.
+# Os nomes após @name permitem reutilizar respostas sem copiar tokens e IDs.
+# Esta sequência altera apenas o ambiente da API indicado em @base.
+@base = http://localhost:8080/api/v1
+
+### 1. Login cidadão demo
+# @name login
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{"email":"cidadao@rotaleve.local","senha":"Cidadao@123"}
+
+### 2. Definir perfil de mobilidade
+PUT {{base}}/perfis/me
+Authorization: Bearer {{login.response.body.$.accessToken}}
+Content-Type: application/json
+
+{"tipo":"GESTANTE","caminhadaMaximaMetros":600,"evitarEscadas":true,"priorizarElevador":true,"priorizarAssento":true}
+
+### 3. Buscar candidatos sintéticos; selecionar a primeira alternativa retornada
+# @name busca
+POST {{base}}/rotas/busca
+Authorization: Bearer {{login.response.body.$.accessToken}}
+Content-Type: application/json
+
+{"origem":"Praça da Sé","destino":"Hospital das Clínicas"}
+
+### 4. Salvar a alternativa de uma consulta própria válida por 30 minutos
+# @name salvar
+POST {{base}}/rotas/salvas
+Authorization: Bearer {{login.response.body.$.accessToken}}
+Content-Type: application/json
+
+{"consultaId":"{{busca.response.body.$.consultaId}}","rotaId":"{{busca.response.body.$.rotas[0].rota.id}}","nome":"Pré-natal (demonstração)"}
+
+### 5. Explicar; conferir fonte SPRING_AI, REGRAS_LOCAIS_SEM_LLM ou FALLBACK_LLM_INDISPONIVEL
+POST {{base}}/rotas/salvas/{{salvar.response.body.$.id}}/explicacao
+Authorization: Bearer {{login.response.body.$.accessToken}}
+
+### 6. Relatar no primeiro ponto da alternativa salva
+# A URL da foto abaixo é apenas ilustrativa; troque pela URL real no app.
+# OBSTACULO é aceito para todos os tipos de ponto.
+# @name relato
+POST {{base}}/relatos
+Authorization: Bearer {{login.response.body.$.accessToken}}
+Content-Type: application/json
+
+{"pontoCriticoId":{{busca.response.body.$.rotas[0].rota.pontosCriticos[0]}},"descricao":"Obstáculo no acesso, conforme cenário sintético de demonstração.","fotoUrl":"https://example.com/foto-obstaculo-demo.jpg","tipoProblema":"OBSTACULO"}
+
+### 7. Consultar notificações; aguarde o processamento assíncrono e repita se necessário
+# @name avisos
+GET {{base}}/notificacoes?page=0&size=20&sort=criadaEm,desc
+Authorization: Bearer {{login.response.body.$.accessToken}}
+
+### 8. Conferir a avaliação atual da rota salva após o problema
+GET {{base}}/rotas/salvas/{{salvar.response.body.$.id}}
+Authorization: Bearer {{login.response.body.$.accessToken}}
+
+### 9. Login gestor para confirmar resolução
+# @name gestor
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{"email":"gestor@rotaleve.local","senha":"Gestor@123"}
+
+### 10. Outro usuário confirma o relato; repetir retorna jaConfirmado=true
+POST {{base}}/relatos/{{relato.response.body.$.id}}/confirmacoes
+Authorization: Bearer {{gestor.response.body.$.accessToken}}
+
+### 11. Resolver como gestor
+POST {{base}}/relatos/{{relato.response.body.$.id}}/resolver
+Authorization: Bearer {{gestor.response.body.$.accessToken}}
+
+### 12. Verificar recuperação da rota e manter a base pronta para repetir a demonstração
+GET {{base}}/rotas/salvas/{{salvar.response.body.$.id}}
+Authorization: Bearer {{login.response.body.$.accessToken}}
+
+### 13. Listagem paginada de relatos ativos
+GET {{base}}/relatos?status=ATIVO&page=0&size=10&sort=id,desc
+Authorization: Bearer {{login.response.body.$.accessToken}}
+
+### 14. Caso negativo: relato sem foto deve retornar erro de validação
+POST {{base}}/relatos
+Authorization: Bearer {{login.response.body.$.accessToken}}
+Content-Type: application/json
+
+{"pontoCriticoId":{{busca.response.body.$.rotas[0].rota.pontosCriticos[0]}},"descricao":"Relato demonstrativo sem referência de fotografia.","tipoProblema":"OBSTACULO"}
+
+### 15. Caso negativo: cidadão não pode criar ponto administrativo (403)
+POST {{base}}/pontos
+Authorization: Bearer {{login.response.body.$.accessToken}}
+Content-Type: application/json
+
+{"nome":"Ponto administrativo de teste","tipo":"RAMPA","latitude":-23.55,"longitude":-46.63,"estado":"DESCONHECIDO"}
+
+### 16. Caso negativo: chamada protegida sem token (401)
+GET {{base}}/usuarios/me

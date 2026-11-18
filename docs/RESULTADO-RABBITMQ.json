@@ -1,0 +1,26 @@
+{
+  "resultado": "APROVADO",
+  "autenticacaoJWT": true,
+  "buscaESalvamento": true,
+  "relatoEReordenacao": true,
+  "alertaAssincronoRabbitMQ": true,
+  "resolucaoGestor": true,
+  "swaggerOpenAPI": true,
+  "brokerRabbitMQReal": true,
+  "LLMRealExterno": false,
+  "fila": "rotaleve.alertas",
+  "consumidores": 1,
+  "confirmacoesAntes": 1,
+  "confirmacoesDepois": 3,
+  "mensagensPendentes": 0,
+  "dataVerificacao": "2026-11-17",
+  "rabbitMQ": "4.4.0-management",
+  "dockerEngine": "29.4.0",
+  "testeIntegracao": {
+    "testes": 1,
+    "falhas": 0,
+    "erros": 0,
+    "ignorados": 0
+  },
+  "IA": "Adiada a pedido do usuario"
+}

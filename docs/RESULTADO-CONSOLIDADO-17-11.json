@@ -1,0 +1,34 @@
+{
+  "consolidadoEm": "2026-11-17T15:28:23-03:00",
+  "casosHTTP": 31,
+  "falhasHTTP": 0,
+  "swagger": {
+    "autorizado": true,
+    "busca": 200,
+    "notas": [
+      93,
+      90,
+      0
+    ]
+  },
+  "rabbitMQ": {
+    "resultado": "APROVADO",
+    "autenticacaoJWT": true,
+    "buscaESalvamento": true,
+    "relatoEReordenacao": true,
+    "alertaAssincronoRabbitMQ": true,
+    "resolucaoGestor": true,
+    "swaggerOpenAPI": true,
+    "brokerRabbitMQReal": true,
+    "LLMRealExterno": false,
+    "fila": "rotaleve.alertas",
+    "consumidores": 1,
+    "confirmacoesAntes": 9,
+    "confirmacoesDepois": 11,
+    "mensagensPendentes": 0
+  },
+  "iaGenerativa": {
+    "habilitada": false,
+    "testada": false
+  }
+}

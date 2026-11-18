@@ -1,0 +1,10 @@
+# Dados sintéticos e contas locais para a apresentação. Não usar em produção.
+spring:
+  datasource:
+    url: ${DEMO_DATABASE_URL:jdbc:h2:mem:rotaleve;DB_CLOSE_DELAY=-1;MODE=Oracle}
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: false
