@@ -42,7 +42,7 @@ O Java demo usa H2 em memória; reiniciar a API reinicia os registros. As fotos 
 3. Disponibilizar a API durante a avaliação e publicar o app no Firebase App Distribution, adicionando o professor.
 4. Conferir/gravar o vídeo de até cinco minutos mostrando esta versão integrada e atualizar os links da entrega.
 
-O front original trouxe um repositório e dois links de vídeo diferentes. Eles foram preservados em `ENTREGA.txt` como referências não verificadas desta versão; não foram substituídos por links inventados. A turma indicada no TXT original é 2TDSPO e deve ser confirmada pelo grupo.
+O front original trouxe um repositório e dois links de vídeo diferentes. Eles foram preservados em `ENTREGA.txt` como referências não verificadas desta versão; não foram substituídos por links inventados. Em confirmação posterior, o grupo informou **2TDSPO** como turma dos cinco integrantes; esse dado foi registrado na identificação de Java.
 
 ## Integrantes
 

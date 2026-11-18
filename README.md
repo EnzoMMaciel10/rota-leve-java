@@ -8,7 +8,7 @@
 | Gabriel Bebé Silva | 562012 |
 | Emanuel Italo | 561337 |
 
-Turma: a informar pelo grupo.
+Turma dos cinco integrantes: **2TDSPO**, confirmada pelo grupo.
 
 Backend da CitizenTech Rota Leve: avalia opções de transporte conforme um perfil de mobilidade, considera relatos sobre barreiras e avisa quem possui uma rota salva afetada. O foco é a camada de acessibilidade. As rotas candidatas vêm de um provedor; o projeto não implementa um motor de roteamento urbano.
 

@@ -17,14 +17,15 @@ Foram aprovados 62 testes Java em 18/11/2026; dois testes externos opcionais fic
 
 Código Java publicado em [EnzoMMaciel10/rota-leve-java](https://github.com/EnzoMMaciel10/rota-leve-java). O endereço real já consta no README, `ENTREGA.txt` e `IDENTIFICACAO.txt`.
 
+Identificação completa: nomes e RMs dos cinco integrantes registrados, com turma **2TDSPO** confirmada pelo grupo.
+
 ## O que falta para entregar Java
 
 1. **Pitch de até cinco minutos.** Gravar ou conferir um vídeo da versão atual e disponibilizar o link público/não listado ou com acesso aberto. Inserir o mesmo link nos arquivos de entrega.
-2. **Identificação.** Nomes e RMs dos cinco integrantes já estão registrados. Confirmar a turma de cada integrante; o TXT do front informa 2TDSPO, mas o grupo ainda não confirmou esse dado para a entrega Java.
-3. **Ensaio da apresentação.** Executar Java, RabbitMQ e IA real e mostrar o app consumindo a API. Todos precisam explicar modelagem, JWT, validação, IA, evento e benefício ao cidadão. A página 67 inclui demonstração ponta a ponta.
-4. **Conferência final e envio.** Abrir os links sem depender do login do grupo, conferir o ZIP, retirar campos de preenchimento e enviar pelo Portal do Aluno no prazo da turma.
+2. **Ensaio da apresentação.** Executar Java, RabbitMQ e IA real e mostrar o app consumindo a API. Todos precisam explicar modelagem, JWT, validação, IA, evento e benefício ao cidadão. A página 67 inclui demonstração ponta a ponta.
+3. **Conferência final e envio.** Abrir os links sem depender do login do grupo, conferir o ZIP, retirar campos de preenchimento e enviar pelo Portal do Aluno no prazo da turma.
 
-O ZIP de código e o repositório público estão preparados; a entrega acadêmica ainda depende do vídeo e dos dados indicados acima. Não foram inventados vídeo, turma confirmada ou deploy.
+O ZIP de código, o repositório público e a identificação estão preparados; faltam o vídeo, o ensaio e o envio da entrega. Não foram inventados vídeo ou deploy.
 
 ## Como iniciar a demonstração
 

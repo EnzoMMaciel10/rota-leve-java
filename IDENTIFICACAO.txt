@@ -1,17 +1,17 @@
 ROTA LEVE - GLOBAL SOLUTION 2026/2 - JAVA ADVANCED
 
 Projeto: Rota Leve
-Turma de cada integrante: [INFORMAR ANTES DA ENTREGA]
+Turma de todos os integrantes: 2TDSPO
 
-Enzo Monteiro Maciel - RM563734
-Matheus de Almeida Sousa - RM563557
-Paulo Estalise - RM563811
-Gabriel Bebé Silva - RM562012
-Emanuel Italo - RM561337
+Enzo Monteiro Maciel - RM563734 - 2TDSPO
+Matheus de Almeida Sousa - RM563557 - 2TDSPO
+Paulo Estalise - RM563811 - 2TDSPO
+Gabriel Bebé Silva - RM562012 - 2TDSPO
+Emanuel Italo - RM561337 - 2TDSPO
 
 Repositório público: https://github.com/EnzoMMaciel10/rota-leve-java
 Vídeo pitch (até 5 minutos): [PREENCHER APÓS GRAVAÇÃO]
-Deploy (se houver): [PREENCHER OU INFORMAR NÃO REALIZADO]
+Deploy (opcional para Java): não realizado.
 
-ATENÇÃO: nomes e RMs foram informados pelo grupo. Preencha a turma e os links
-antes de montar a entrega no Portal do Aluno.
+Nomes, RMs e turma foram confirmados pelo grupo. Inclua o link do vídeo
+antes de enviar a entrega pelo Portal do Aluno.

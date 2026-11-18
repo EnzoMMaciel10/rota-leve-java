@@ -20,7 +20,7 @@ O Compose ativa o broker e prepara a demonstração distribuída. O LLM local é
 ## Pendências para a avaliação
 
 - [x] Registrar os cinco nomes e RMs informados em `IDENTIFICACAO.txt`.
-- [ ] Preencher a turma de cada integrante em `IDENTIFICACAO.txt`.
+- [x] Registrar a turma **2TDSPO** dos cinco integrantes em `IDENTIFICACAO.txt`, conforme confirmação do grupo.
 - [ ] Revisar e compreender o código com todos os integrantes.
 - [x] Compilar e validar o Java localmente: 62 testes aprovados em 18/11/2026; dois testes externos opcionais ignorados na suíte, com IA e fluxo de avisos também exercitados no app.
 - [x] Ativar e validar Spring AI com modelo local real, sem chave externa, em 17/11/2026; repetir a demonstração na apresentação do grupo.
