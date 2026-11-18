@@ -15,15 +15,16 @@ Escopo confirmado pelo grupo: somente a disciplina de Java. Referência: enuncia
 
 Foram aprovados 62 testes Java em 18/11/2026; dois testes externos opcionais ficaram ignorados na suíte padrão. IA real e notificações também foram conferidas pelo app na rodada de integração. Nenhum teste foi repetido apenas por esta revisão de documentação.
 
+Código Java publicado em [EnzoMMaciel10/rota-leve-java](https://github.com/EnzoMMaciel10/rota-leve-java). O endereço real já consta no README, `ENTREGA.txt` e `IDENTIFICACAO.txt`.
+
 ## O que falta para entregar Java
 
-1. **Repositório público atualizado.** Publicar o código Java e conferir se o README inclui execução, usuários de teste, endpoints, opção RabbitMQ e declaração do uso de IA. Informar o link real no README, `ENTREGA.txt` e `IDENTIFICACAO.txt`.
-2. **Pitch de até cinco minutos.** Gravar ou conferir um vídeo da versão atual e disponibilizar o link público/não listado ou com acesso aberto. Inserir o mesmo link nos arquivos de entrega.
-3. **Identificação.** Nomes e RMs dos cinco integrantes já estão registrados. Confirmar a turma de cada integrante; o TXT do front informa 2TDSPO, mas o grupo ainda não confirmou esse dado para a entrega Java.
-4. **Ensaio da apresentação.** Executar Java, RabbitMQ e IA real e mostrar o app consumindo a API. Todos precisam explicar modelagem, JWT, validação, IA, evento e benefício ao cidadão. A página 67 inclui demonstração ponta a ponta.
-5. **Conferência final e envio.** Abrir os links sem depender do login do grupo, conferir o ZIP, retirar campos de preenchimento e enviar pelo Portal do Aluno no prazo da turma.
+1. **Pitch de até cinco minutos.** Gravar ou conferir um vídeo da versão atual e disponibilizar o link público/não listado ou com acesso aberto. Inserir o mesmo link nos arquivos de entrega.
+2. **Identificação.** Nomes e RMs dos cinco integrantes já estão registrados. Confirmar a turma de cada integrante; o TXT do front informa 2TDSPO, mas o grupo ainda não confirmou esse dado para a entrega Java.
+3. **Ensaio da apresentação.** Executar Java, RabbitMQ e IA real e mostrar o app consumindo a API. Todos precisam explicar modelagem, JWT, validação, IA, evento e benefício ao cidadão. A página 67 inclui demonstração ponta a ponta.
+4. **Conferência final e envio.** Abrir os links sem depender do login do grupo, conferir o ZIP, retirar campos de preenchimento e enviar pelo Portal do Aluno no prazo da turma.
 
-O ZIP de código está preparado; a entrega acadêmica ainda depende dos links e dos dados indicados acima. Não foram inventados repositório, vídeo, turma confirmada ou deploy.
+O ZIP de código e o repositório público estão preparados; a entrega acadêmica ainda depende do vídeo e dos dados indicados acima. Não foram inventados vídeo, turma confirmada ou deploy.
 
 ## Como iniciar a demonstração
 

@@ -7,8 +7,9 @@ Integrantes e RMs: registrados em IDENTIFICACAO.txt.
 Turma de cada integrante: [INFORMAR ANTES DA ENTREGA]
 
 O backend Java e o aplicativo React Native foram integrados e validados localmente.
-Para Java, finalizar o repositório público atualizado, o pitch, a identificação
-e o ensaio da demonstração ponta a ponta com o app consumindo esta API.
+O código Java está publicado no repositório público indicado acima.
+Para Java, finalizar o pitch, a identificação e o ensaio da demonstração
+ponta a ponta com o app consumindo esta API.
 Manter Java, RabbitMQ e o LLM real ativos durante a demonstração.
 Deploy: não realizado; opcional para Java, conforme o enunciado.
 

@@ -28,7 +28,7 @@ O Compose ativa o broker e prepara a demonstração distribuída. O LLM local é
 - [x] Integrar o aplicativo React Native fornecido pelo grupo; fluxo no navegador validado em 18/11/2026.
 - [ ] Ensaiar a demonstração ponta a ponta com o app integrado consumindo esta API; Expo Go ou emulador pode ser usado sem gerar APK próprio.
 - [ ] Confirmar a execução do Java, RabbitMQ e LLM real no computador da apresentação e o acesso da API pelo app durante a demonstração.
-- [ ] Publicar o repositório GitHub solicitado pelo enunciado e registrar seu link real.
+- [x] Publicar o Java no repositório público [EnzoMMaciel10/rota-leve-java](https://github.com/EnzoMMaciel10/rota-leve-java) e registrar o link no README, `ENTREGA.txt` e `IDENTIFICACAO.txt`.
 - [ ] Gravar pitch com até 5 minutos; publicar ou disponibilizar o vídeo e testar o acesso.
 - [ ] Atualizar README e `ENTREGA.txt` com os links reais.
 - [ ] Montar o ZIP com identificação e links; conferir integridade e enviar no Portal do Aluno.
