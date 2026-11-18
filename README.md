@@ -18,7 +18,7 @@ Este pacote contém a API Java, seu contrato OpenAPI, testes e configuração de
 
 O LLM real foi ativado e validado em 17/11/2026 com **Spring AI + Ollama + Qwen 2.5 local**. Use `iniciar-ia.cmd` para iniciar esse modo, sem chave externa. Veja a [validação da funcionalidade](docs/VALIDACAO-SPRING-AI.md).
 
-O aplicativo React Native do grupo foi integrado a esta API e é entregue em um pacote separado. Login, perfil, rotas, relatos com foto e notificações usam o servidor. O Java está publicado neste repositório público. Para concluir Java Advanced, faltam o pitch, a identificação completa e o ensaio da demonstração integrada. A API, o RabbitMQ e o modelo devem estar disponíveis durante a apresentação; hospedagem em nuvem é opcional no enunciado de Java. Veja o [guia de fechamento de Java](docs/FECHAMENTO-JAVA.md), [requisitos e pendências](docs/REQUISITOS.md), [contrato para o app](docs/INTEGRACAO-MOBILE.md) e [guia de apresentação](docs/GUIA-APRESENTACAO.md).
+O aplicativo React Native do grupo foi integrado a esta API e é entregue em um pacote separado. Login, perfil, rotas, relatos com foto e notificações usam o servidor. O Java está publicado neste repositório público, com nomes, RMs e turma 2TDSPO confirmados pelo grupo. Para concluir Java Advanced, faltam o pitch, o ensaio da demonstração integrada e a conferência dos arquivos para envio. A API, o RabbitMQ e o modelo devem estar disponíveis durante a apresentação; hospedagem em nuvem é opcional no enunciado de Java. Veja o [guia de fechamento de Java](docs/FECHAMENTO-JAVA.md), [requisitos e pendências](docs/REQUISITOS.md), [contrato para o app](docs/INTEGRACAO-MOBILE.md) e [guia de apresentação](docs/GUIA-APRESENTACAO.md).
 
 ## Tecnologias e organização
 
