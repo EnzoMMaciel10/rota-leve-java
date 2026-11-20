@@ -15,17 +15,17 @@ Escopo confirmado pelo grupo: somente a disciplina de Java. Referência: enuncia
 
 Foram aprovados 62 testes Java em 18/11/2026; dois testes externos opcionais ficaram ignorados na suíte padrão. IA real e notificações também foram conferidas pelo app na rodada de integração. Nenhum teste foi repetido apenas por esta revisão de documentação.
 
-Código Java publicado em [EnzoMMaciel10/rota-leve-java](https://github.com/EnzoMMaciel10/rota-leve-java). O endereço real já consta no README, `ENTREGA.txt` e `IDENTIFICACAO.txt`.
+Código Java publicado em [EnzoMMaciel10/rota-leve-java](https://github.com/EnzoMMaciel10/rota-leve-java). O endereço real consta no README e em `ENTREGA.txt`.
 
 Identificação completa: nomes e RMs dos cinco integrantes registrados, com turma **2TDSPO** confirmada pelo grupo.
 
-## O que falta para entregar Java
+## Entrega preparada e próximos passos do grupo
 
-1. **Pitch de até cinco minutos.** Gravar ou conferir um vídeo da versão atual e disponibilizar o link público/não listado ou com acesso aberto. Inserir o mesmo link nos arquivos de entrega.
+1. **Pitch registrado.** O grupo forneceu o [vídeo de apresentação](https://youtu.be/ISxR0zD9vo4), registrado no README e em `ENTREGA.txt`. A página do YouTube foi aberta no navegador e o player informa **4min42s**, dentro do limite de cinco minutos. Essa conferência de acesso e duração não representa avaliação integral do conteúdo gravado.
 2. **Ensaio da apresentação.** Executar Java, RabbitMQ e IA real e mostrar o app consumindo a API. Todos precisam explicar modelagem, JWT, validação, IA, evento e benefício ao cidadão. A página 67 inclui demonstração ponta a ponta.
-3. **Conferência final e envio.** Abrir os links sem depender do login do grupo, conferir o ZIP, retirar campos de preenchimento e enviar pelo Portal do Aluno no prazo da turma.
+3. **Envio.** O ZIP foi preparado com identificação e links, sem campos de preenchimento. Enviar pelo Portal do Aluno no prazo da turma.
 
-O ZIP de código, o repositório público e a identificação estão preparados; faltam o vídeo, o ensaio e o envio da entrega. Não foram inventados vídeo ou deploy.
+O pacote `GS_2_JAVA.zip` contém somente `IDENTIFICACAO.txt` e `ENTREGA.txt`. O código-fonte, a documentação e os testes ficam no repositório público. O envio no Portal e a apresentação presencial são ações do grupo. Não foi realizado deploy em nuvem.
 
 ## Como iniciar a demonstração
 
@@ -43,6 +43,6 @@ O ambiente demo usa H2 em memória: reiniciar a API reinicia os registros. Prepa
 
 A publicação de um app instalável no Firebase e o hash no Sobre são exigências da disciplina de Mobile. Oracle/Azure, hospedagem em nuvem, mapa real e visão computacional não aparecem como obrigatórios de Java nas páginas 62–68. As configurações opcionais foram preservadas. A integração com o app e sua demonstração continuam fazendo parte de Java.
 
-O repositório e os vídeos informados no pacote original do front não foram confirmados como a entrega de Java desta versão. Não os trate automaticamente como links finais.
+Os links antigos do pacote original do front são referências históricas. Para esta entrega de Java, use o repositório e o vídeo registrados no README e em `ENTREGA.txt`.
 
 O roteiro técnico está em `GUIA-APRESENTACAO.md`; o checklist detalhado está em `REQUISITOS.md`.

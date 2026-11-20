@@ -35,14 +35,14 @@ O provedor atual aceita apenas o cenário sintético **Praça da Sé → Hospita
 
 O Java demo usa H2 em memória; reiniciar a API reinicia os registros. As fotos ficam em `data/fotos` na cópia Java, não no ZIP. Elas são comunitárias e acessíveis por URL aleatória; a regravação remove metadados, mas excluir um relato não exclui a imagem automaticamente. Um deploy precisa de banco e arquivos persistentes, HTTPS e configuração externa apropriada.
 
-## Para concluir a entrega acadêmica
+## Próximos passos por disciplina
 
-1. Testar o aplicativo em celular/emulador, com a API acessível pela rede.
-2. Atualizar o repositório com esta versão e configurar o hash real em EXPO_PUBLIC_APP_COMMIT antes do build.
-3. Disponibilizar a API durante a avaliação e publicar o app no Firebase App Distribution, adicionando o professor.
-4. Conferir/gravar o vídeo de até cinco minutos mostrando esta versão integrada e atualizar os links da entrega.
+1. Para complementar a validação Mobile, testar o aplicativo em celular/emulador, com a API acessível pela rede.
+2. Para a entrega da disciplina de Mobile, atualizar seu repositório com esta versão e configurar o hash real em EXPO_PUBLIC_APP_COMMIT antes do build.
+3. Disponibilizar a API durante a avaliação. Publicar o app no Firebase App Distribution e adicionar o professor são exigências da disciplina de Mobile, não do pacote de submissão de Java.
+4. Para Java, o grupo forneceu o [vídeo pitch](https://youtu.be/ISxR0zD9vo4), registrado no README e em `ENTREGA.txt`. Conferir o acesso e o limite de cinco minutos antes de enviar a entrega.
 
-O front original trouxe um repositório e dois links de vídeo diferentes. Eles foram preservados em `ENTREGA.txt` como referências não verificadas desta versão; não foram substituídos por links inventados. Em confirmação posterior, o grupo informou **2TDSPO** como turma dos cinco integrantes; esse dado foi registrado na identificação de Java.
+O front original trouxe um repositório e dois links de vídeo diferentes, que pertencem ao histórico daquele pacote. Os links finais desta entrega de Java estão no README e em `ENTREGA.txt`. Em confirmação posterior, o grupo informou **2TDSPO** como turma dos cinco integrantes; esse dado foi registrado na identificação de Java.
 
 ## Integrantes
 

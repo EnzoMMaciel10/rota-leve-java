@@ -1,21 +1,12 @@
 ROTA LEVE - JAVA ADVANCED - ENTREGA
 
-Repositório público no GitHub: https://github.com/EnzoMMaciel10/rota-leve-java
-Vídeo pitch público ou não listado, até 5 minutos: [PREENCHER]
 Projeto: Rota Leve
-Integrantes e RMs: registrados em IDENTIFICACAO.txt.
-Turma de todos os integrantes: 2TDSPO
+Turma: 2TDSPO
 
-O backend Java e o aplicativo React Native foram integrados e validados localmente.
-O código Java está publicado no repositório público indicado acima.
-Para Java, finalizar o pitch e o ensaio da demonstração
-ponta a ponta com o app consumindo esta API.
-Manter Java, RabbitMQ e o LLM real ativos durante a demonstração.
-Deploy: não realizado; opcional para Java, conforme o enunciado.
+REPOSITORIO PUBLICO - CODIGO-FONTE E README
+https://github.com/EnzoMMaciel10/rota-leve-java
 
-Este arquivo é a entrega de JAVA ADVANCED. Não é necessário gerar APK ou
-publicar no Firebase para cumprir os requisitos específicos desta disciplina.
+VIDEO PITCH
+https://youtu.be/ISxR0zD9vo4
 
-Conferir as páginas 62 a 68 do enunciado e a data no Portal do Aluno.
-O enunciado solicita um ZIP com identificação, link do repositório e link do vídeo.
-Este pacote de código NÃO substitui o preenchimento dos links e a submissão final.
+Integrantes e RMs: IDENTIFICACAO.txt.

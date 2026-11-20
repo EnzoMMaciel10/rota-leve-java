@@ -17,7 +17,7 @@ O modo padrão comprova o fluxo de domínio com banco H2, JWT e dados sintético
 
 O Compose ativa o broker e prepara a demonstração distribuída. O LLM local é iniciado por `iniciar-ia.cmd`, sem chave de API; os downloads são necessários apenas na preparação inicial. O perfil Oracle fornece configuração de conexão, mas não representa evidência de banco remoto conectado ou de deploy concluído.
 
-## Pendências para a avaliação
+## Checklist da entrega e da apresentação
 
 - [x] Registrar os cinco nomes e RMs informados em `IDENTIFICACAO.txt`.
 - [x] Registrar a turma **2TDSPO** dos cinco integrantes em `IDENTIFICACAO.txt`, conforme confirmação do grupo.
@@ -28,10 +28,13 @@ O Compose ativa o broker e prepara a demonstração distribuída. O LLM local é
 - [x] Integrar o aplicativo React Native fornecido pelo grupo; fluxo no navegador validado em 18/11/2026.
 - [ ] Ensaiar a demonstração ponta a ponta com o app integrado consumindo esta API; Expo Go ou emulador pode ser usado sem gerar APK próprio.
 - [ ] Confirmar a execução do Java, RabbitMQ e LLM real no computador da apresentação e o acesso da API pelo app durante a demonstração.
-- [x] Publicar o Java no repositório público [EnzoMMaciel10/rota-leve-java](https://github.com/EnzoMMaciel10/rota-leve-java) e registrar o link no README, `ENTREGA.txt` e `IDENTIFICACAO.txt`.
-- [ ] Gravar pitch com até 5 minutos; publicar ou disponibilizar o vídeo e testar o acesso.
-- [ ] Atualizar README e `ENTREGA.txt` com os links reais.
-- [ ] Montar o ZIP com identificação e links; conferir integridade e enviar no Portal do Aluno.
+- [x] Publicar o Java no repositório público [EnzoMMaciel10/rota-leve-java](https://github.com/EnzoMMaciel10/rota-leve-java) e registrar o link no README e em `ENTREGA.txt`.
+- [x] Registrar o [vídeo pitch fornecido pelo grupo](https://youtu.be/ISxR0zD9vo4).
+- [x] Atualizar README e `ENTREGA.txt` com os links reais.
+- [x] Preparar `GS_2_JAVA.zip` somente com `IDENTIFICACAO.txt` e `ENTREGA.txt`; o código-fonte fica no GitHub.
+- [x] Abrir a página do vídeo no navegador e conferir a duração de **4min42s**, dentro do limite de cinco minutos. A conferência não substitui a avaliação do conteúdo pelo professor.
+- [x] Conferir os dois arquivos TXT, os links e a integridade do ZIP.
+- [ ] Enviar no Portal do Aluno no prazo da turma.
 
 O checklist acima cobre somente Java Advanced. A publicação de um aplicativo instalável no Firebase App Distribution e o hash na tela Sobre pertencem à disciplina de Mobile. Oracle/Azure, hospedagem em nuvem e roteamento real não são requisitos obrigatórios de Java nas páginas 62–68; configurações opcionais existentes foram preservadas.
 

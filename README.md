@@ -1,5 +1,7 @@
 # Rota Leve — Java Advanced
 
+**Vídeo pitch:** [apresentação do Rota Leve — 4min42s](https://youtu.be/ISxR0zD9vo4).  
+
 | Integrante | RM |
 |---|---|
 | Enzo Monteiro Maciel | 563734 |
@@ -14,11 +16,11 @@ Backend da CitizenTech Rota Leve: avalia opções de transporte conforme um perf
 
 ## Escopo e situação da entrega
 
-Este pacote contém a API Java, seu contrato OpenAPI, testes e configuração de execução. O modo `demo` usa rotas e pontos **sintéticos**, sem afirmar condições reais do transporte de São Paulo. Ele permite demonstrar o fluxo local sem chaves externas. A explicação local é um texto determinístico e é identificada como tal; para demonstrar o requisito de Spring AI é necessário habilitar o LLM real.
+Este repositório contém a API Java, seu contrato OpenAPI, testes e configuração de execução. O modo `demo` usa rotas e pontos **sintéticos**, sem afirmar condições reais do transporte de São Paulo. Ele permite demonstrar o fluxo local sem chaves externas. No modo padrão sem LLM, a explicação é determinística e identificada como tal; para demonstrar o requisito de Spring AI é necessário habilitar o LLM real.
 
 O LLM real foi ativado e validado em 17/11/2026 com **Spring AI + Ollama + Qwen 2.5 local**. Use `iniciar-ia.cmd` para iniciar esse modo, sem chave externa. Veja a [validação da funcionalidade](docs/VALIDACAO-SPRING-AI.md).
 
-O aplicativo React Native do grupo foi integrado a esta API e é entregue em um pacote separado. Login, perfil, rotas, relatos com foto e notificações usam o servidor. O Java está publicado neste repositório público, com nomes, RMs e turma 2TDSPO confirmados pelo grupo. Para concluir Java Advanced, faltam o pitch, o ensaio da demonstração integrada e a conferência dos arquivos para envio. A API, o RabbitMQ e o modelo devem estar disponíveis durante a apresentação; hospedagem em nuvem é opcional no enunciado de Java. Veja o [guia de fechamento de Java](docs/FECHAMENTO-JAVA.md), [requisitos e pendências](docs/REQUISITOS.md), [contrato para o app](docs/INTEGRACAO-MOBILE.md) e [guia de apresentação](docs/GUIA-APRESENTACAO.md).
+O aplicativo React Native do grupo foi integrado a esta API e é entregue em um pacote separado. Login, perfil, rotas, relatos com foto e notificações usam o servidor. A interface foi validada na versão web do React Native; essa validação não substitui teste em aparelho ou emulador. O Java está publicado neste repositório público, com nomes, RMs e turma 2TDSPO confirmados pelo grupo. O link do pitch fornecido pelo grupo está registrado neste README e em `ENTREGA.txt`. O envio pelo Portal e a apresentação presencial permanecem a cargo do grupo. A API, o RabbitMQ e o modelo devem estar disponíveis durante a apresentação; hospedagem em nuvem é opcional no enunciado de Java. Veja o [guia de fechamento de Java](docs/FECHAMENTO-JAVA.md), [requisitos e pendências](docs/REQUISITOS.md), [contrato para o app](docs/INTEGRACAO-MOBILE.md) e [guia de apresentação](docs/GUIA-APRESENTACAO.md).
 
 ## Tecnologias e organização
 
@@ -38,12 +40,20 @@ Veja os diagramas, relacionamentos e regras do score em [arquitetura](docs/ARQUI
 
 ## Executar no Windows
 
-Pré-requisito: JDK 17 ou superior, com `JAVA_HOME` configurado. Na pasta deste README:
+Pré-requisito: JDK 17 ou superior, com `JAVA_HOME` configurado. Para a demonstração com **RabbitMQ e Spring AI reais**, tenha também Docker Desktop instalado e execute na pasta deste README:
 
 ```powershell
 .\mvnw.cmd clean verify
+.\iniciar-ia.cmd
+```
+
+O iniciador prepara RabbitMQ, Ollama e o modelo local antes de iniciar a API. Para executar somente o modo padrão, com explicação determinística e sem RabbitMQ externo, use:
+
+```powershell
 .\mvnw.cmd spring-boot:run
 ```
+
+Mantenha uma única instância da API na porta `8080`. Se o iniciador já estiver executando a aplicação, use essa instância; iniciar outra pelo IntelliJ na mesma porta causa a mensagem `Port 8080 was already in use`.
 
 No Linux/macOS, use `sh ./mvnw clean verify` e `sh ./mvnw spring-boot:run`.
 
@@ -150,14 +160,14 @@ $env:RABBIT_INTEGRATION_TEST = "true"
 Remove-Item Env:RABBIT_INTEGRATION_TEST
 ```
 
-Esse teste prepara seu domínio em H2 em memória, publica um evento real e aguarda o consumidor. Sua presença no código não significa que um broker externo tenha sido validado nesta entrega.
+Esse teste prepara seu domínio em H2 em memória, publica um evento real e aguarda o consumidor. Sua execução com RabbitMQ real foi registrada em 17/11/2026; ele continua opcional na suíte padrão para permitir a verificação sem broker externo.
 
 ## Identificação e entrega
 
-Preencha `IDENTIFICACAO.txt` e `ENTREGA.txt`. Adicione aqui os links reais depois de criados:
+O pacote de submissão `GS_2_JAVA.zip` contém somente `IDENTIFICACAO.txt`, com os integrantes, RMs e turma, e `ENTREGA.txt`, com os links abaixo. O código-fonte e este README ficam no repositório público:
 
 - Repositório público: [Rota Leve Java](https://github.com/EnzoMMaciel10/rota-leve-java).
-- Pitch de até 5 minutos: **PENDENTE**.
+- Vídeo pitch fornecido pelo grupo: [apresentação do Rota Leve](https://youtu.be/ISxR0zD9vo4).
 - Deploy, se houver: **NÃO REALIZADO NESTE PACOTE**.
 
 O enunciado, páginas 62–66, define os seis requisitos Java e os entregáveis; a página 67 exige demonstração com o app Mobile na apresentação, e a página 68 traz as regras do vídeo. Confira a data da turma no Portal do Aluno.
